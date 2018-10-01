@@ -1,0 +1,11 @@
+<h1>Index Page</h1>
+
+<% @aboutcars.each do |aboutcar| %>
+
+  <h1>ID: <%= aboutcar.id %></h1>
+  <h1><%= aboutcar.country %></h1>
+  <h3><%= aboutcar.city %></h3>
+  <h3><%= aboutcar.color %></h3>
+  <a href="/aboutcars/<%= aboutcar.id %>">Go to Show Page</a>
+
+<% end %>

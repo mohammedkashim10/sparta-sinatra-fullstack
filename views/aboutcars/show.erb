@@ -1,0 +1,10 @@
+<a href="/aboutcars">Back</a>
+<a href="/aboutcars/<%= @aboutcar.id %>/edit">Edit</a>
+<h1>Country is <%= @aboutcar.country %></h1>
+<h3>City is <%= @aboutcar.city %></h3>
+<h3>Color is <%= @aboutcar.color %></h3>
+
+<form class="" action="/aboutcars/<%= @aboutcar.id %>" method="post">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete">
+</form>
