@@ -1,4 +1,4 @@
-class App < Sinatra::Base
+class CarsController < Sinatra::Base
 
   configure :development do
     register Sinatra::Reloader
@@ -13,7 +13,7 @@ class App < Sinatra::Base
   # INDEX
   get "/cars" do
     @title = "Index Page"
-    @cars = Car.all
+    @cars = Car.all_with_aboutcar
     puts @cars.class
 
     erb :"cars/index" # links to the index.erb page
@@ -27,7 +27,7 @@ class App < Sinatra::Base
   # SHOW
   get "/cars/:id" do
     id = params[:id].to_i
-    @car = Car.find id
+    @car = Car.find_with_aboutcar id
 
     erb :"cars/show" # links to the show.erb page
   end

@@ -1,0 +1,20 @@
+<form action="/aboutcars/<%= @aboutcar.id %>" method="POST">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Country</label>
+    <input type="text" class="form-control" placeholder="Country" name="country" value="<%= @aboutcar.country %>">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">City</label>
+    <input type="text" class="form-control" placeholder="City" name="city" value="<%= @aboutcar.city %>">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Color</label>
+    <input type="text" class="form-control" placeholder="Color" name="color" value="<%= @aboutcar.color %>">
+  </div>
+
+  <button type="submit" class="btn btn-default">Submit</button>
+
+  <% if (@aboutcar.id != "") %>
+    <input type="hidden" name="_method" value="PUT">
+  <% end %>
+</form>
